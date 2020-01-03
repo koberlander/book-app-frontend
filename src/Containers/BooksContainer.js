@@ -1,4 +1,5 @@
 import React from 'react'
+import Books from '../Components/Books'
 
 class BooksContainer extends React.Component {
 
@@ -17,9 +18,10 @@ class BooksContainer extends React.Component {
 
   render(){
     return(
-      <div>Books Container</div>
+      <Books books={this.props.books} />
     )
   }
 }
+
 
 export default BooksContainer
