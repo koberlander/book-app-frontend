@@ -34,7 +34,7 @@ class BookInput extends React.Component {
         })
       })
     }
-    
+
   // Note: Research how to make accessible labels in Semantic here: https://react.semantic-ui.com/collections/form/#shorthand-field-control-id
   render(){
     return(
