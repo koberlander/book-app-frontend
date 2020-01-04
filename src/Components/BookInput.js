@@ -19,26 +19,28 @@ class BookInput extends React.Component {
       })
     }
 
-    handleSubmit = event => {
-      event.preventDefault()
-
-      // add book to our array of book objects
-      this.addBook(this.state)
-
-
-      // clear form upon submit
-      this.setState({
-        genre: '',
-        title: '',
-        description: ''
+    addBook = () => {
+      console.log('Adding a book. One moment...');
+      fetch('http://localhost:3000/api/books', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          genre: '',
+          title: '',
+          description: ''
+        })
       })
     }
+    
   // Note: Research how to make accessible labels in Semantic here: https://react.semantic-ui.com/collections/form/#shorthand-field-control-id
   render(){
     return(
       <div>
       <h2>Add a New Book</h2>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={() => this.addBook()}>
           <Form.Select
             fluid
             label='Genre'
@@ -53,7 +55,7 @@ class BookInput extends React.Component {
             value={this.state.title}
             onChange={this.handleChange}
             />
-            <Form.Input
+            <Form.TextArea
               fluid
               label='Description'
               name='description'
@@ -61,7 +63,7 @@ class BookInput extends React.Component {
               value={this.state.description}
               onChange={this.handleChange}
               />
-              <Button type='submit'>Submit</Button>
+            <Button type='submit'>Submit</Button>
         </Form>
       </div>
     )
