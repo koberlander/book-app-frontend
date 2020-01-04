@@ -10,7 +10,7 @@ class BooksContainer extends React.Component {
     }
   }
 
-
+// COMMENTED OUT SO THAT I COULD IMPORT booksArray
   // componentDidMount(){
   //   fetch('http://localhost:3000/api/books')
   //   .then(res => res.json())
