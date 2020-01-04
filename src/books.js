@@ -1,4 +1,4 @@
-export const books = [
+export const booksArray = [
    {
       id:  1,
       genre: 'book genre 1',
@@ -20,5 +20,5 @@ export const books = [
 ]
 
 export default {
-  books
+  booksArray
 }
