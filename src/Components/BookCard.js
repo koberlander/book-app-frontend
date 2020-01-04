@@ -2,6 +2,10 @@ import React from 'react'
 
 class BookCard extends React.Component {
 
+ // edit book callback?
+
+ // delete book callback?
+ 
   render(){
     return(
       <div>

@@ -1,18 +1,13 @@
 import React from 'react'
-import BookCard from './BookCard'
+// import BookCard from './BookCard'
 
-class Books extends React.Component {
-
+const Books = (props) => {
+// console.log('props: ', props);
   // review how to pass props down in plain react
 
-  render(){
-    return(
-      {props.books && props.books.map(book => {
-        <BookCard book={book} />
-      }
-    )}
-    )
-  }
+  return(
+    <div> </div>
+  )
 }
 
 export default Books

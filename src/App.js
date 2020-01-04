@@ -1,5 +1,6 @@
 import React from 'react';
 import BooksContainer from './Containers/BooksContainer'
+import BookInput from './Components/BookInput'
 
 function App() {
   return (
@@ -7,9 +8,8 @@ function App() {
       <header className="App-header">
           Books! Books! Books!
       </header>
-      <body>
         <BooksContainer />
-      </body>
+        <BookInput />
     </div>
   );
 }

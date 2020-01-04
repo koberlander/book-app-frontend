@@ -2,21 +2,26 @@ import React from 'react'
 import Books from '../Components/Books'
 
 class BooksContainer extends React.Component {
-
-  state = {
-    books: []
+  constructor(){
+    super()
+    this.state = {
+      books: []
+    }
   }
 
+
   componentDidMount(){
-    fetch('http://localhost:3000/api/books/')
+    fetch('http://localhost:3000/api/books')
     .then(res => res.json())
-    .then(books => {
+    .then(allBooks => {
       this.setState({
+        books: allBooks
       })
     })
   }
 
   render(){
+    // debugger
     return(
       <Books books={this.props.books} />
     )
