@@ -4,35 +4,51 @@ import {genreOptions} from '../GenreOptions'
 
 class BookEdit extends React.Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
-    // figure out how to pull existing info on selected book
     this.state = {
-      genre: '',
-      title: '',
-      description: ''
+      id: props.book.id,
+      genre: props.book.genre,
+      title: props.book.title,
+      description: props.book.description,
+      updatedBook: null
     }
   }
 
-  handleChange = event => {
+  handleChange = (event, book) => {
+    console.log('Changing book now.');
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
-  // need to doublecheck body format
-  editBook = (bookId, formValues) => {
-    console.log('Editing selected book now...');
-    fetch(`http://localhost:3000/api/v1/books/${bookId}`, {
+
+  editBook = () => {
+    console.log('Saving changes to book now...');
+
+    // Collect new data from form
+    let putBook = {
+      id: this.state.id,
+      genre: this.state.genre,
+      title: this.state.title,
+      description: this.state.description
+    }
+
+
+    fetch(`http://localhost:3000/api/v1/books/${this.state.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify({
-
-      })
+      body: JSON.stringify(putBook)
+    })
+    .then(res => res.json())
+    .then(adaptedBook => {
+      this.setState({
+        updatedBook: adaptedBook
+      }, () => {this.props.editBooksView(adaptedBook)})
     })
   }
 
@@ -40,7 +56,7 @@ class BookEdit extends React.Component {
     return(
       <div>
         <h3 class='add book title' >Edit a Book</h3>
-          <Form onSubmit={(_) => this.editBook(bookId, formdata)}>
+          <Form onSubmit={(_) => this.editBook()}>
             <Form.Select
               fluid
               label='Genre'

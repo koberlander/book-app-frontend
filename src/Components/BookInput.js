@@ -37,14 +37,14 @@ class BookInput extends React.Component {
     }
 
   /*
-     Note: Research how to submit a dropdown selection to API
-     and how to make accessible labels in Semantic here:
+     Note: Double check how to submit a dropdown selection to API.
+     Also, research how to make accessible labels in Semantic here:
      https://react.semantic-ui.com/collections/form/#shorthand-field-control-id
   */
   render(){
     return(
       <div>
-      <h3 class='add book title' >Add a New Book</h3>
+      <h3 class='add book title'>Add a New Book</h3>
         <Form onSubmit={() => this.addBook()}>
           <Form.Select
             fluid
