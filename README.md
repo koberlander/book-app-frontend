@@ -2,7 +2,6 @@
 
 Welcome to Books! Books! Books!
 -------
-
 This app is a book collection tracker. You can add to, remove from, and edit items in your book hoard.
 
 It uses React, as well as Semantic UI React and custom CSS for styling.
