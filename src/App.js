@@ -5,8 +5,8 @@ import BookInput from './Components/BookInput'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-          Books! Books! Books!
+      <header className="books header">
+          <h1>Books! Books! Books!</h1>
       </header>
         <BooksContainer />
         <BookInput />

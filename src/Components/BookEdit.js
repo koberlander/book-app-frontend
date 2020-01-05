@@ -1,7 +1,19 @@
 import React from 'react'
-import {Fragment, Form} from 'semantic-ui-react'
+import {Form, Button} from 'semantic-ui-react'
+import {genreOptions} from '../GenreOptions'
 
 class BookEdit extends React.Component {
+
+  constructor(){
+    super()
+
+    // figure out how to pull existing info on selected book
+    this.state = {
+      genre: '',
+      title: '',
+      description: ''
+    }
+  }
 
   handleChange = event => {
     this.setState({
@@ -9,9 +21,9 @@ class BookEdit extends React.Component {
     })
   }
 
-  // pass in bookId and form values
-  // NOT FINISHED
+  // need to doublecheck body format
   editBook = (bookId, formValues) => {
+    console.log('Editing selected book now...');
     fetch(`http://localhost:3000/api/v1/books/${bookId}`, {
       method: 'PUT',
       headers: {
@@ -26,17 +38,35 @@ class BookEdit extends React.Component {
 
   render(){
     return(
-      <Fragment>
-        <div>
-          1) Pass down props for selected book into my form
-          2) Call editBook on form submit
+      <div>
+        <h3 class='add book title' >Edit a Book</h3>
+          <Form onSubmit={(_) => this.editBook(bookId, formdata)}>
+            <Form.Select
+              fluid
+              label='Genre'
+              options={genreOptions}
+              required
+              placeholder='Select a Genre'
+            />
+            <Form.Input
+              fluid
+              label='Title'
+              name='title'
+              required
+              value={this.state.title}
+              onChange={this.handleChange}
+              />
+              <Form.TextArea
+                fluid
+                label='Description'
+                name='description'
+                required
+                value={this.state.description}
+                onChange={this.handleChange}
+                />
+              <Button color='ui olive button' type='submit'>Submit</Button>
+          </Form>
         </div>
-
-        <Form>
-
-        </Form>
-
-      </Fragment>
     )
   }
 }

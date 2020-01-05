@@ -1,0 +1,27 @@
+/* Green background color */
+html, body {
+  color: rgb(190, 239, 0) !important;
+  background: #beef00 !important;
+}
+
+/* Books! Books! Books! title font */
+.books.header {
+  font-family: 'Londrina Outline' !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+/* BookInput title */
+.add.book.title {
+  font-family: 'Open Sans' !important;
+  color: rgb(0,0,0) !important;
+}
+
+/* BookInput fields color */
+.ui.fluid.selection.dropdown {
+
+}
+
+/* All buttons */
+.ui.button {
+  color: rgb(101, 122, 0) !important;
+}

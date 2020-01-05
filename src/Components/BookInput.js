@@ -19,6 +19,7 @@ class BookInput extends React.Component {
       })
     }
 
+    // need to doublecheck body format
     addBook = () => {
       console.log('Adding a book. One moment...');
       fetch('http://localhost:3000/api/books', {
@@ -35,16 +36,21 @@ class BookInput extends React.Component {
       })
     }
 
-  // Note: Research how to make accessible labels in Semantic here: https://react.semantic-ui.com/collections/form/#shorthand-field-control-id
+  /*
+     Note: Research how to submit a dropdown selection to API
+     and how to make accessible labels in Semantic here:
+     https://react.semantic-ui.com/collections/form/#shorthand-field-control-id
+  */
   render(){
     return(
       <div>
-      <h2>Add a New Book</h2>
+      <h3 class='add book title' >Add a New Book</h3>
         <Form onSubmit={() => this.addBook()}>
           <Form.Select
             fluid
             label='Genre'
             options={genreOptions}
+            required
             placeholder='Select a Genre'
           />
           <Form.Input
@@ -63,7 +69,7 @@ class BookInput extends React.Component {
               value={this.state.description}
               onChange={this.handleChange}
               />
-            <Button type='submit'>Submit</Button>
+            <Button color='ui olive button' type='submit'>Submit</Button>
         </Form>
       </div>
     )
