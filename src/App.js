@@ -52,13 +52,13 @@ class App extends React.Component {
         </header>
 
         <Switch>
-        <Route exact path='/books/:id/edit' render={(props) => {
-          let bookId = props.match.params.id
-          let foundBook = this.state.books.find(book => book.id === bookId)
+          <Route exact path='/books/:id/edit' render={(props) => {
+            let bookId = props.match.params.id
+            let foundBook = this.state.books.find(book => book.id === bookId)
 
-            return (
-                <BookEdit book={foundBook} editBooksView={this.editBooksView} />
-              )}}/>
+              return (
+                  <BookEdit book={foundBook} editBooksView={this.editBooksView} />
+                )}}/>
 
           <Route path='/books/new' render={(props) => <BookInput {...props}/>}/>
 

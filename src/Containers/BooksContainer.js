@@ -12,7 +12,9 @@ class BooksContainer extends React.Component {
   render(){
     // debugger
     return(
-      <Books books={this.props.books} />
+      <div>
+        <Books books={this.props.books} />
+      </div>
     )
   }
 }
