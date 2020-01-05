@@ -9,16 +9,6 @@ class BooksContainer extends React.Component {
     }
   }
 
-  componentDidMount(){
-    fetch('http://localhost:3000/api/books')
-    .then(res => res.json())
-    .then(allBooks => {
-      this.setState({
-        books: allBooks
-      })
-    })
-  }
-
   render(){
     // debugger
     return(
