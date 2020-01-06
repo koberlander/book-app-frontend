@@ -62,7 +62,8 @@ class App extends React.Component {
 
           <Route path='/books/new' render={(props) => <BookInput {...props}/>}/>
 
-          <Route exact path='/books' render={() => {return (<BooksContainer books={this.state.books} />)}} />
+          <Route exact path='/books' render={() => <BooksContainer books={this.state.books}/>} />
+
 
         </Switch>
       </div>

@@ -6,6 +6,7 @@ import BookCard from './BookCard'
 const Books = (props) => {
 // console.log('props: ', props);
 
+// RENDER ADD BOOK BUTTON. .MAP OVER BOOKS ARRAY AND RENDER EACH BOOK IN A BOOKCARD
   return(
     <div>
       <div>
@@ -17,9 +18,9 @@ const Books = (props) => {
         </Button>
       </div>
 
-    <Grid columns='six' divided='vertically'>
+    <Grid columns='three' divided='vertically'>
       <Grid.Row >
-        {props.books.map((book) => <BookCard key={book.name} book={book} match={props.match}/>)}
+        {props.books.map((book) => <BookCard key={book.id} book={book} match={props.match}/>)}
       </Grid.Row>
     </Grid>
 
