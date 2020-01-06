@@ -5,17 +5,16 @@ import BookCard from './BookCard'
 
 const Books = (props) => {
 // console.log('props: ', props);
-  // review how to pass props down in plain react
 
   return(
     <div>
       <div>
         <Button
           color='olive'
-          icon='plus'
           as={Link}
-          to='/books/new'
-        />
+          to='/books/new'>
+          Add
+        </Button>
       </div>
 
     <Grid columns='six' divided='vertically'>
