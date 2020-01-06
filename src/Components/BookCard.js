@@ -12,8 +12,8 @@ class BookCard extends React.Component {
   }
 
   render(){
-    debugger
-    // WOULD USE CODE LIKE THIS TO FILL IN CARD BELOW
+    // debugger
+    // WOULD USE CODE SIMILAR TO THIS TO FILL IN DYNAMIC CARD PROPERTIES BELOW (STILL NEED TO TEST THIS)
     let book = this.props.book? this.props.book : this.props.books.find(book => parseInt(book.id) === parseInt(this.props.match.params.id))
     //
     let bookId = book ? book.id : ''
